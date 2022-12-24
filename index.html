@@ -7,6 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello Namastey developers!!!</h1>
+    <div id="root"></div>
+    <script>
+        // createElement is used to create an Element in js
+        const welcomeMessage = document.createElement("h1");
+        // using .innerHTML we can assign/change the html content in that particular element
+        welcomeMessage.innerHTML = "Hello Developers , welcome to Namastey React Course";
+        // getElementById is used to get the element where we want to append the data/html
+        const root = document.getElementById("root");
+        // appending using appendChild
+        root.appendChild(welcomeMessage);
+    </script>
 </body>
 </html>
