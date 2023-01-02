@@ -73,4 +73,4 @@ The async attribute tells the browser to download the script asynchronously, whi
 
 The defer attribute tells the browser to download the script and hold it in a queue until the page has finished parsing. This ensures that the script will not execute until after the page has been fully loaded, and it also guarantees that the script will execute in the order in which it appears in the HTML.
 
-Both the async and defer attributes can be useful in optimizing the loading of scripts on a webpage, depending on the specific needs and requirements of the page.
+Both the async and defer attributes can be useful in optimizing the loading of scripts on a webpage, depending on the specific needs and requirements of the page.                                                                                                                                
