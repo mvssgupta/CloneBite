@@ -1,23 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const heading = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement(
-    "div",
-    { id: "child" },
-    [React.createElement("h1", {}, "Hello guys"),React.createElement("h1", {}, "How are you doing?")]
-  )
+
+
+//JSX -> html LIKE syntax
+const Greeting = () => <h1>Hello Developers!</h1>;
+
+
+const GreetComponent = () => (
+    <>
+        <Greeting/>
+        <h1>I welcome you all to learn React</h1>
+    </>
 );
 
-// creating an h1 element using react createElement API
-const greeting = React.createElement(
-  "h1",
-  {},
-  "Hello developers , welcome all"
-);
+
 // creating root using createRoot API where the data need to be rendered
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // finally using render method we are rendering the content
-root.render(heading);
+root.render(<GreetComponent/>);
