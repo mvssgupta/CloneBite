@@ -1367,6 +1367,115 @@ const resDetails = [
       "link": "https://www.swiggy.com/restaurants/samosa-singh-laxmi-nagar-gopalapatnam-vizag-505180",
       "type": "WEBLINK"
     }
+  },
+  {
+    "info": {
+      "id": "66074",
+      "name": "Celebrations Restaurant",
+      "cloudinaryImageId": "parxfzqlhvjobxobzbcj",
+      "locality": "Railway Colony",
+      "areaName": "Marripalem",
+      "costForTwo": "₹200 for two",
+      "cuisines": [
+        "Indian",
+        "Chinese",
+        "Tandoor",
+        "Biryani"
+      ],
+      "avgRating": 4,
+      "feeDetails": {
+        "restaurantId": "66074",
+        "fees": [
+          {
+            "name": "BASE_DISTANCE",
+            "fee": 9800
+          },
+          {
+            "name": "BASE_TIME"
+          },
+          {
+            "name": "ANCILLARY_SURGE_FEE"
+          }
+        ],
+        "totalFee": 9800
+      },
+      "parentId": "56280",
+      "avgRatingString": "4.0",
+      "totalRatingsString": "10K+",
+      "sla": {
+        "deliveryTime": 39,
+        "lastMileTravel": 11.5,
+        "serviceability": "SERVICEABLE",
+        "slaString": "39 mins",
+        "lastMileTravelString": "11.5 km",
+        "iconType": "ICON_TYPE_EMPTY"
+      },
+      "availability": {
+        "nextCloseTime": "2023-08-22 23:00:00",
+        "opened": true
+      },
+      "badges": {
+        
+      },
+      "isOpen": true,
+      "aggregatedDiscountInfoV2": {
+        
+      },
+      "type": "F",
+      "badgesV2": {
+        "entityBadges": {
+          "imageBased": {
+            
+          },
+          "textBased": {
+            
+          },
+          "textExtendedBadges": {
+            
+          }
+        }
+      },
+      "orderabilityCommunication": {
+        "title": {
+          
+        },
+        "subTitle": {
+          
+        },
+        "message": {
+          
+        },
+        "customIcon": {
+          
+        }
+      },
+      "differentiatedUi": {
+        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        "differentiatedUiMediaDetails": {
+          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+          "lottie": {
+            
+          },
+          "video": {
+            
+          }
+        }
+      },
+      "reviewsSummary": {
+        
+      },
+      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      "restaurantOfferPresentationInfo": {
+        
+      }
+    },
+    "analytics": {
+      
+    },
+    "cta": {
+      "link": "https://www.swiggy.com/restaurants/celebrations-restaurant-railway-colony-marripalem-vizag-66074",
+      "type": "WEBLINK"
+    }
   }
 ];
 
@@ -1378,7 +1487,7 @@ const Body = () => {
           <button>Search</button>
         </div>
       <div className="restaurant-container">
-      {resDetails.map((resData) => (<RestaurantCardComponent resData = {resData}/>))} 
+      {resDetails.map((resData) => (<RestaurantCardComponent key={resData.info.id} resData = {resData}/>))} 
       </div>
     </div>
   );
