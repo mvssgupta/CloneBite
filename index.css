@@ -26,6 +26,7 @@
 
 .search-bar button {
   padding: 5px 10px;
+  margin: 5px 10px;
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -34,46 +35,72 @@
 }
 
 .user-icon img {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
 }
 
-
+.restaurant-container {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .restaurant-card {
-  width:200px;
-  height:200px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 10px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: transform 0.2s ease-in-out;
+  height : 220px;
+  width : 200px;
+  margin:10px;
+}
+
+.restaurant-card:hover {
+  transform: scale(1.05);
 }
 
 .restaurant-image {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-right: 10px;
+  width: 200px;
+  height: 150px;
+  border-radius: 8px;
+  /* margin-bottom: 5px; */
 }
 
 .restaurant-details {
-  flex-grow: 1;
+  text-align: center;
 }
 
 .restaurant-name {
-  font-size: 18px;
-  margin-bottom: 5px;
+  font-size: 15px;
+  margin:5px;
 }
 
 .restaurant-cuisine {
-  margin-bottom: 5px;
-  color: #888;
+  font-size: 15px;
+  margin:5px;
 }
 
 .restaurant-rating {
-  font-weight: bold;
+  margin:5px;
+  font-size: 15px;
+}
+
+
+.nav-items {
+  padding:  0px 20px;
+}
+
+.nav-items > ul {
+  font-size: 24px;
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-items > ul > li {
+  padding: 10px;
+  margin: 10px
 }

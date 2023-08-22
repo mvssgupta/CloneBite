@@ -2,7 +2,6 @@
   "name": "reactcourse",
   "version": "1.0.0",
   "description": "This is Namastey React Course",
-  "main": "App.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
