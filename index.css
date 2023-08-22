@@ -117,3 +117,8 @@
   padding: 10px;
   margin: 10px
 }
+
+.status-btn {
+  padding: 0 5px;
+  font-size:20px;
+}

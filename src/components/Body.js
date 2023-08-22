@@ -4,7 +4,13 @@ import axios from "axios";
 import ShimmerUI from "./ShimmerUI";
 
 const Body = () => {
-  const[listOfRestaurants,setListOfRestaurants] = useState([]);
+  const [listOfRestaurants,setListOfRestaurants] = useState([]);
+  const [filteredRestaurants,setFilteredRestaurants] = useState([]);
+  const [searchText,setSearchText] = useState("")
+
+  const handleSearch = (e) => {
+    setSearchText(e.target.value)
+  }
 
   useEffect(()=>{
     fetchDataFromApi();
@@ -14,6 +20,7 @@ const Body = () => {
     const res = await axios.get("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.6868159&lng=83.2184815&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
     const resData = res.data
     setListOfRestaurants(resData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    setFilteredRestaurants(resData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   }
 
   if(listOfRestaurants?.length===0)
@@ -24,12 +31,12 @@ const Body = () => {
     return (
       <div className="body">
        <div className="search-bar">
-            <input type="text" placeholder="Search" />
-            <button>Search</button>
-            <button onClick={()=> setListOfRestaurants(listOfRestaurants.filter(data => data.info.avgRating>=4))}>Top Rated Restaurants</button>
+            <input type="text" placeholder="Search" value={searchText} onChange={handleSearch}/>
+            <button onClick={() => setFilteredRestaurants(listOfRestaurants?.filter((res)=>res?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())))}>Search</button>
+            <button onClick={()=> setFilteredRestaurants(listOfRestaurants?.filter(data => data?.info?.avgRating>=4))}>Top Rated Restaurants</button>
           </div>
         <div className="restaurant-container">
-        {listOfRestaurants?.map((restaurant) => (<RestaurantCardComponent key={restaurant.info.id} resData = {restaurant}/>))} 
+        {filteredRestaurants?.map((restaurant) => (<RestaurantCardComponent key={restaurant.info.id} resData = {restaurant}/>))} 
         </div>
       </div>
     );
