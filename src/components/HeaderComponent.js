@@ -1,3 +1,6 @@
+import foodLogo from '../../Images/foodLogo.jpg'
+import userIcon from '../../Images/user-icon.jpg'
+
 const HeaderComponent = () => {
     return (
       <>
@@ -16,8 +19,6 @@ const HeaderComponent = () => {
             <img src={userIcon} alt="User Icon" />
           </div>
         </div>
-       
-        <Body />
       </>
     );
   };

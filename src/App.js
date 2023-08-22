@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "../index.css";
-import foodLogo from "../Images/foodLogo.jpg";
-import userIcon from '../Images/user-icon.jpg'
-import RestaurantCardComponent from "./components/RestaurantCardComponent";
-import HeaderComponent from "./components/HeaderComponent";
 import Body from "./components/Body";
+import HeaderComponent from './components/HeaderComponent'
 
 const App = () => {
   return (
-      <Body/>
+      <>
+        <HeaderComponent/>
+        <Body/>
+      </>
     );
 }
 
