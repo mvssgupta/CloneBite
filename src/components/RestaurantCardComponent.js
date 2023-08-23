@@ -10,7 +10,7 @@ const RestaurantCardComponent = (props) => {
       <img className="restaurant-image" src={SWIGGY_CDN+cloudinaryImageId} alt={name} />
       <div className="restaurant-details">
         <h5 className="restaurant-name">{name}</h5>
-        <p className="restaurant-cuisine">{cuisines.join(", ")}</p>
+        <p className="restaurant-cuisine">{cuisines?.slice(0,(cuisines.length>5)?5:cuisines.length).join(", ")}</p>
         <p className="restaurant-rating">Rating: {avgRating}⭐</p>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import foodLogo from '../../Images/foodLogo.jpg'
 import userIcon from '../../Images/user-icon.jpg'
+import { Link } from 'react-router-dom';
 
 const HeaderComponent = () => {
 
@@ -17,9 +18,10 @@ const HeaderComponent = () => {
           </div>
           <div className="nav-items">
             <ul>
-              <li>Home</li>
-              <li>About us</li>
-              <li>Cart</li>
+              <li><Link to='/'>Home</Link></li>
+              <li><Link to='/about'>About us</Link></li>
+              <li><Link to='/contact'>Contact us</Link></li>
+              <li><Link to='/cart'>Cart</Link></li>
               <li><button className="status-btn" onClick={handleClick}>{status}</button></li>
             </ul>
           </div>
