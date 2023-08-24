@@ -121,6 +121,7 @@
 
 ul > li > a ,div > a{
   text-decoration: none;
+  color:black;
 }
 ul> li > a:hover {
   text-decoration: none;
@@ -143,4 +144,31 @@ ul> li > a:hover {
 .error-img {
   height: 300px;
   width: 400px;
+}
+
+
+
+.Restaurant-name {
+  text-align: center;
+}
+
+.menu-items{
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.card-price {
+  font-weight: bold;
+  margin : 3px;
+}
+
+.card-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-end; /* Align the button to the right */
+  margin : 3px;
 }
