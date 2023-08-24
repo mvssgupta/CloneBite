@@ -1,16 +1,25 @@
-import React from 'react';
+import React ,{lazy,Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import '../index.css';
 import Body from './components/Body';
 import HeaderComponent from './components/HeaderComponent';
-import AboutUs from './components/AboutUs';
+// import AboutUs from './components/AboutUs';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import ErrorComponent from './components/ErrorComponent';
 import ContactUs from './components/ContactUs';
 import Cart from './components/Cart';
 import RestaurantMenu from './components/RestaurantMenu';
-
+import useOnlineStatus from './utils/useOnlineStatus'
+import NoInternetComponent from './components/NoInternetComponent'
+const AboutUs = lazy(()=>import("./components/AboutUs"))
 const App = () => {
+
+  const onlineStatus = useOnlineStatus();
+  if(onlineStatus===false)
+  {
+    return <NoInternetComponent/>
+  }
+
   return (
     <>
       <HeaderComponent />
@@ -30,7 +39,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: 'about',
-        element: <AboutUs />,
+        element: <Suspense fallback={<>Loading the about component...</>}><AboutUs /></Suspense>,
       },
       {
         path: 'contact',

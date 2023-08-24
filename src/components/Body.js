@@ -28,7 +28,6 @@ const Body = () => {
   {
     return <ShimmerUI></ShimmerUI>
   }
-
     return (
       <div className="body">
        <div className="search-bar">
