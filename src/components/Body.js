@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import RestaurantCardComponent from './RestaurantCardComponent'
+import RestaurantCardComponent,{promotedRestaurantCard} from './RestaurantCardComponent'
 import axios from "axios";
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router-dom";
@@ -12,6 +12,7 @@ const Body = () => {
   const handleSearch = (e) => {
     setSearchText(e.target.value)
   }
+  const HighRatedRestaurantCard = promotedRestaurantCard(RestaurantCardComponent);
 
   useEffect(()=>{
     fetchDataFromApi();
@@ -28,6 +29,7 @@ const Body = () => {
   {
     return <ShimmerUI></ShimmerUI>
   }
+
     return (
       <div className="body">
        <div className="flex items-center justify-center mx-2.5 my-0">
@@ -36,7 +38,9 @@ const Body = () => {
             <button className=" bg-cyan-600 text-white rounded cursor-pointer mx-2.5 my-1 px-2.5 py-1 border-none" onClick={()=> setFilteredRestaurants(listOfRestaurants?.filter(data => data?.info?.avgRating>=4))}>Top Rated Restaurants</button>
           </div>
         <div className="flex flex-wrap justify-center">
-        {filteredRestaurants?.map((restaurant) => (<Link className="no-underline text-black" key={restaurant.info.id} to={'/restaurant/' + restaurant.info.id}> <RestaurantCardComponent resData = {restaurant}/></Link>))} 
+        {filteredRestaurants?.map((restaurant) => (<Link className="no-underline text-black" key={restaurant.info.id} to={'/restaurant/' + restaurant.info.id}>
+        {(restaurant.info.avgRating>4)?(<HighRatedRestaurantCard resData = {restaurant}/>):(<RestaurantCardComponent resData = {restaurant}/>)}
+         </Link>))} 
         </div>
       </div>
     );

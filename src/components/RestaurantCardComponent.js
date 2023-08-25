@@ -10,11 +10,24 @@ const RestaurantCardComponent = (props) => {
       <img className="w-48 h-3/5 rounded-lg" src={SWIGGY_CDN+cloudinaryImageId} alt={name} />
       <div className="text-center h-2/5">
         <h5 className="text-md m-1 font-semibold">{name}</h5>
-        <p className="text-md m-1">{cuisines?.slice(0,(cuisines.length>3)?3:cuisines.length).join(", ")}</p>
+        <p className="text-md m-1">{cuisines?.slice(0,(cuisines.length>2)?2:cuisines.length).join(", ")}</p>
         <p className="text-md m-1">Rating: {avgRating}⭐</p>
       </div>
     </div>
   );
 };
+
+
+export const promotedRestaurantCard = (RestaurantCardComponent) => {
+  return (props)=> { 
+    return (
+        <div>
+          <label className="absolute bg-black text-white rounded-md px-2">Recommended</label>
+          <RestaurantCardComponent {...props}/>
+        </div>
+    )
+  }
+}
+
 
 export default RestaurantCardComponent;
