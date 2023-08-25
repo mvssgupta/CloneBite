@@ -23,8 +23,8 @@ const RestaurantMenu = () => {
 
   return (
     <>
-      <h1 className="Restaurant-name">{name}</h1>
-      <ul className="menu-items">
+      <h1 className="text-center font-bold text-2xl py-2">{name}</h1>
+      <ul className="flex flex-wrap">
         {menuItems?.map((data) => (
           <MenuItemCard
             key={data?.card?.info?.id}

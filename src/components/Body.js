@@ -30,13 +30,13 @@ const Body = () => {
   }
     return (
       <div className="body">
-       <div className="search-bar">
-            <input type="text" placeholder="Search" value={searchText} onChange={handleSearch}/>
-            <button onClick={() => setFilteredRestaurants(listOfRestaurants?.filter((res)=>res?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())))}>Search</button>
-            <button onClick={()=> setFilteredRestaurants(listOfRestaurants?.filter(data => data?.info?.avgRating>=4))}>Top Rated Restaurants</button>
+       <div className="flex items-center justify-center mx-2.5 my-0">
+            <input className=" rounded mr-1 p-1 border-none" type="text" placeholder="Search" value={searchText} onChange={handleSearch}/>
+            <button className=" bg-cyan-600 text-white rounded cursor-pointer mx-2.5 my-1 px-2.5 py-1 border-none" onClick={() => setFilteredRestaurants(listOfRestaurants?.filter((res)=>res?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())))}>Search</button>
+            <button className=" bg-cyan-600 text-white rounded cursor-pointer mx-2.5 my-1 px-2.5 py-1 border-none" onClick={()=> setFilteredRestaurants(listOfRestaurants?.filter(data => data?.info?.avgRating>=4))}>Top Rated Restaurants</button>
           </div>
-        <div className="restaurant-container">
-        {filteredRestaurants?.map((restaurant) => (<Link key={restaurant.info.id} to={'/restaurant/' + restaurant.info.id}> <RestaurantCardComponent resData = {restaurant}/></Link>))} 
+        <div className="flex flex-wrap justify-center">
+        {filteredRestaurants?.map((restaurant) => (<Link className="no-underline text-black" key={restaurant.info.id} to={'/restaurant/' + restaurant.info.id}> <RestaurantCardComponent resData = {restaurant}/></Link>))} 
         </div>
       </div>
     );
