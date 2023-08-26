@@ -31,7 +31,7 @@ const Body = () => {
   }
 
     return (
-      <div className="body">
+      <div>
        <div className="flex items-center justify-center mx-2.5 my-0">
             <input className=" rounded mr-1 p-1 border-none" type="text" placeholder="Search" value={searchText} onChange={handleSearch}/>
             <button className=" bg-cyan-600 text-white rounded cursor-pointer mx-2.5 my-1 px-2.5 py-1 border-none" onClick={() => setFilteredRestaurants(listOfRestaurants?.filter((res)=>res?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())))}>Search</button>
