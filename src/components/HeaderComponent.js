@@ -2,6 +2,7 @@ import { useState } from 'react';
 import foodLogo from '../../Images/foodLogo.jpg'
 import userIcon from '../../Images/user-icon.jpg'
 import { Link } from 'react-router-dom';
+import {useSelector} from 'react-redux'
 
 const HeaderComponent = () => {
 
@@ -9,6 +10,8 @@ const HeaderComponent = () => {
   const handleClick = () => {
     setStatus((status==="Login")?"LogOut":"Login")
   }
+
+  const cartItems = useSelector((store) => store.cart.items);
 
     return (
       <>
@@ -21,7 +24,7 @@ const HeaderComponent = () => {
               <li className="m-2.5 p-2.5"><Link className="no-underline text-black hover:px-1 hover:no-underline hover:font-bold hover:bg-blue-500"  to='/'>Home</Link></li>
               <li className="m-2.5 p-2.5"><Link className="no-underline text-black hover:px-1 hover:no-underline hover:font-bold hover:bg-blue-500"  to='/about'>About us</Link></li>
               <li className="m-2.5 p-2.5"><Link className="no-underline text-black hover:px-1 hover:no-underline hover:font-bold hover:bg-blue-500"  to='/contact'>Contact us</Link></li>
-              <li className="m-2.5 p-2.5"><Link className="no-underline text-black hover:px-1 hover:no-underline hover:font-bold hover:bg-blue-500"  to='/cart'>Cart</Link></li>
+              <li className="m-2.5 p-2.5"><Link className="no-underline text-black hover:px-1 hover:no-underline hover:font-bold hover:bg-blue-500"  to='/cart'>Cart-{cartItems.length} items</Link></li>
               <li className="m-2.5 p-2.5"><button className="text-xl px-[5px] py-0" onClick={handleClick}>{status}</button></li>
             </ul>
           </div>

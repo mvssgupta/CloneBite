@@ -12,6 +12,9 @@ import RestaurantMenu from './components/RestaurantMenu';
 import useOnlineStatus from './utils/useOnlineStatus'
 import NoInternetComponent from './components/NoInternetComponent'
 const AboutUs = lazy(()=>import("./components/AboutUs"))
+import { Provider } from 'react-redux';
+import ourAppReduxStore from './utils/ourAppReduxStore';
+
 const App = () => {
 
   const onlineStatus = useOnlineStatus();
@@ -21,10 +24,10 @@ const App = () => {
   }
 
   return (
-    <>
+    <Provider store={ourAppReduxStore}>
       <HeaderComponent />
       <Outlet />
-    </>
+    </Provider>
   );
 };
 
