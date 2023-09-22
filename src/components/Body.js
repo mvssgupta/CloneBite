@@ -21,8 +21,8 @@ const Body = () => {
   const fetchDataFromApi =  async() => {
     const res = await axios.get("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.6868159&lng=83.2184815&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
     const resData = res.data
-    setListOfRestaurants(resData?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-    setFilteredRestaurants(resData?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    setListOfRestaurants(resData?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    setFilteredRestaurants(resData?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   }
 
   if(listOfRestaurants?.length===0)
